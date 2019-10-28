@@ -1,0 +1,1081 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{
+	
+	background-image: url("../images/bg.png");
+	background-attachment: fixed;
+	background-size: contain;
+	background-color: rgb(34,34,34);	
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+
+/*Compatibilidad con HTML 5: define nuevas etiquetas HTML 5 como display:block para que los navegadores sepan cómo procesar las etiquetas correctamente. */
+header, section, footer, aside, article, figure {
+	display: block;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen del bloque contenedor. El margen inferior restante lo mantendrá separado de los elementos de que le sigan.  */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de los bloques, en lugar de en los elementos del bloque propiamente dicho, elimina todas las matemáticas de modelo de cuadro. Un bloque anidado con relleno lateral también puede usarse como método alternativo. */
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color: #42413C;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ Este contenedor de anchura fija rodea a todas las demás bloques ~~ */
+.container {
+	width: 960px;
+	background-color: #FFFFFF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño  */
+}
+/* ~~ No se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. ~~ */
+header {
+	background-color: #3399CC;	
+}
+
+
+.logo_header {
+		-moz-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	background-image: -o-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	color: #2B2C2B;
+	text-shadow: rgba(254,254,254,0.5) 0px 1px 0px;
+}
+
+.toolbar {
+	display: block;
+	float: right;
+	border-bottom: #CCC 2px;
+	width: 780px;
+	height: 90px;
+	
+		-moz-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	background-image: -o-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	color: #2B2C2B;
+	text-shadow: rgba(254,254,254,0.5) 0px 1px 0px;
+}
+
+#user_nav {
+
+    background: none repeat scroll 0% 0% transparent;
+    font-family: Trebuchet MS;
+	display:block;
+    font-size: 12px;
+    margin-top: 20px;
+	margin-left: 15px;
+    float: left;
+	width: 20%;
+    height: 30px;
+    text-shadow: 1px 1px 0px rgb(169, 169, 169);
+    font-weight: bold;
+}
+
+.inputbox {
+	background-color: #FFFFFF;
+	border: 1px solid #c0c0c0;
+	color: #333333;
+	padding: 2px;
+	cursor: text;
+}
+
+
+input.inputbox {
+    width: 150px;
+	height: 15px;
+}
+
+
+
+.autowidth {
+    width: auto !important;
+}
+.inputbox:focus {
+	border-color: rgb(0,0,0);
+	color: rgb(15, 73, 135);
+}
+
+.inputbox:hover {
+	border-color: rgb(17, 163, 234);
+}
+
+.inputbox:focus {
+    border: 1px solid rgb(234, 234, 234);
+    color: rgb(75, 75, 75);
+}
+
+/* Form button styles
+---------------------------------------- */
+input.button1, input.button2 {
+	font-size: 1em;
+}
+
+a.button1, input.button1, input.button3, a.button2, input.button2 {
+	width: auto !important;
+
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	color: #000;
+	background: #FAFAFA none repeat-x top;
+}
+
+a.button1, input.button1 {
+	font-weight: bold;
+	border: 1px solid #666666;
+}
+
+input.button3 {
+	padding: 0;
+	margin: 0;
+	line-height: 5px;
+	height: 12px;
+	background-image: none;
+	font-variant: small-caps;
+}
+
+/* Alternative button */
+a.button2, input.button2, input.button3 {
+	border: 1px solid #666666;
+}
+
+/* <a> button in the style of the form buttons */
+a.button1, a.button1:link, a.button1:visited, a.button1:active, a.button2, a.button2:link, a.button2:visited, a.button2:active {
+	text-decoration: none;
+	color: #000000;
+	padding: 2px 8px;
+	line-height: 250%;
+	vertical-align: text-bottom;
+	background-position: 0 1px;
+}
+
+/* Hover states */
+a.button1:hover, input.button1:hover, a.button2:hover, input.button2:hover, input.button3:hover {
+	border: 1px solid #BCBCBC;
+	background-position: 0 100%;
+	color: #BCBCBC;
+}
+
+input.disabled {
+	font-weight: normal;
+	color: #666666;
+}
+
+/* Topic and forum Search */
+.search-box {
+	margin-top: 3px;
+	margin-left: 5px;
+	float: left;
+}
+
+.search-box input {
+}
+
+input.search {
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: left 1px;
+	padding-left: 17px;
+}
+
+.full { width: 95%; }
+.medium { width: 50%;}
+.narrow { width: 25%;}
+.tiny { width: 10%;}
+
+#links_options {
+		color: #000000;
+		text-decoration: none;
+        list-style: none;
+		margin-right: 10px;
+}
+
+#primary_nav {
+
+    background: none repeat scroll 0% 0% transparent;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    margin-top: 15px;
+    float: right;
+	width: 70%;
+    height: 30px;
+    text-shadow: 1px 1px 0px rgb(169, 169, 169);
+    font-weight: bold;
+}
+
+#primary_nav ul li, #primary_nav ul li a {
+		color: #000000;
+		text-decoration: none;
+        list-style: none;
+}
+
+	#primary_nav ul li.active {
+			background: transparent;
+			font-weight: bold;
+	
+	
+			text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
+		}
+
+		#primary_nav ul li.active a {
+
+			
+			display: block;
+			color: #fff;
+			border: 1px solid #232323;
+			border-top: 0;
+			border-left: 0;
+		}
+
+		#primary_nav ul li.active a:hover {
+
+			margin-right: 4px;
+			display: block;
+			color: #fff;
+			border: 1px solid #232323;
+			border-top: 0;
+			border-left: 0;
+			text-shadow: 0 0 0 #000;
+			box-shadow: 0 0 0 rgba(0, 0, 0, 0.00);
+			-moz-box-shadow: 0 0 0 rgba(0, 0, 0, 0.00);
+			-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, 0.00);
+		}
+
+		#primary_nav ul li.active a img {
+			text-align: center;
+			margin-bottom: 7px;
+			opacity: 1;
+		}
+
+	#primary_nav ul li a {
+		background: transparent;
+		padding: 6px 12px;
+		margin-left: 2px;
+		border-top: 0;
+		border-left: 0;
+		display: block;
+	}
+
+	#primary_nav ul li a:hover {
+
+		color: #fff;
+		border-top: 0;
+		border-left: 0;
+		text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+		-moz-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+		-webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+	}
+
+	#primary_nav ul li a:active {
+
+		color: #67727a;
+		border-top: 0;
+		border-left: 0;
+	}
+
+	#primary_nav ul li a img {
+		text-align: center;
+		margin-bottom: 7px;
+		opacity: 0.4;
+	}
+
+	#primary_nav ul li a:hover img {
+		opacity: 1;
+	}
+
+	#primary_nav ul li a:active img {
+		opacity: 0.4;
+	}
+
+	
+#primary_nav li:hover ul {
+    margin-left: 0px;
+    text-align: center;
+}
+	
+#primary_nav li:hover{
+
+	box-shadow: 5px 5px 80px  #FFFFFF inset;
+	color:#000;
+	text-shadow:1px 1px 1px #000000;
+}
+
+#primary_nav ul li {
+    margin-left: 0px;
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.clear {
+	display: block;
+	clear: both;
+	font-size: 1px;
+	line-height: 1px;
+	background: transparent;
+}
+.clear-separator {
+   margin-top: 50px;
+   display: block;
+   clear: both;
+   font-size: 1px;
+   line-height: 1px;
+   background: transparent;
+
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de los elementos del bloque. Los elementos situados dentro de estos bloques tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral al bloque propiamente dicho, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en el  bloque y colocar un segundo bloque dentro de éste sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en un bloque configurado para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de bloques para los que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla del elemento del bloque para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos bloques de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la izquierda en lugar de a la derecha, simplemente haga que estas columnas floten en dirección opuesta (todas a la izquierda en lugar de todas a la derecha) y éstas se representarán en orden inverso. No es necesario mover los bloques por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: right;
+	width: 180px;
+	background-color: #79BCFF;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 780px;
+	float: right;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol {
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones  */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados  */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	width: 160px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;
+	background-color: #05BCE2;
+	color: rgb(255,255,255);
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #CCCCCC;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+footer {
+	padding: 10px 0;
+	padding-left: 20px;
+	background-color: #7DBEFF;
+	position: relative;/* esto da a IE6 el parámetro hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+
+
+
+.main {
+	display: block;
+	width: 80%;
+	float: left;
+	background-color: #FFFFFF;
+}
+.complete_main {
+	display: block;
+	width: 100%;
+	float: left;
+	background-color: #FFFFFF;
+	
+}
+
+
+.options {
+	display: inline-block;
+	width: 180px;
+	background-color: #FFFFFF;
+	margin-left: 20px;
+}
+
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.options_buttons {
+	list-style: none; /* esto elimina el marcador de lista */
+
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.options_buttons li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones  */
+}
+ul.options_buttons a, ul.options_buttons a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados  */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	width: 180px;  /*esta anchura hace que se pueda hacer clic en todo el botón para IE6. Puede eliminarse si no es necesario proporcionar compatibilidad con IE6. Calcule la anchura adecuada restando el relleno de este vínculo de la anchura del contenedor de barra lateral. */
+	text-decoration: none;
+	background-color: #CCCCCC;
+}
+ul.options_buttons a:hover, ul.options_buttons a:active, ul.options_buttons a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #FFFFFF;
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Administracion */
+
+/* -- overall styles ------------------------------ */
+
+#border-top.h_green          { background: url(/media/administration/h_green/j_header_middle.png) repeat-x; }
+#border-top.h_green div      { background: url(/media/administration/h_green/j_header_right.png) 100% 0 no-repeat; }
+#border-top.h_green div div  { background: url(/media/administration/h_green/j_header_left.png) no-repeat; height: 54px; }
+
+#border-top.h_teal          { background: url(/media/administration/h_teal/j_header_middle.png) repeat-x; }
+#border-top.h_teal div      { background: url(/media/administration/h_teal/j_header_right.png) 100% 0 no-repeat; }
+#border-top.h_teal div div  { background: url(/media/administration/h_teal/j_header_left.png) no-repeat; height: 54px; }
+
+#border-top.h_cherry          { background: url(/media/administration/h_cherry/j_header_middle.png) repeat-x; }
+#border-top.h_cherry div      { background: url(/media/administration/h_cherry/j_header_right.png) 100% 0 no-repeat; }
+#border-top.h_cherry div div  { background: url(/media/administration/h_cherry/j_header_left.png) no-repeat; height: 54px; }
+
+#border-top .title {
+	font-size: 22px; font-weight: bold; color: #fff; line-height: 44px;
+	padding-left: 20px;
+}
+
+#border-top .version {
+	display: block; float: right;
+	color: #fff;
+	padding: 25px 5px 0 0;
+}
+
+#border-bottom 			{ background: url(/media/administration/j_bottom.png) repeat-x; }
+#border-bottom div  		{ background: url(/media/administration/j_corner_br.png) 100% 0 no-repeat; }
+#border-bottom div div 	{ background: url(/media/administration/j_corner_bl.png) no-repeat; height: 11px; }
+
+#footer .copyright { margin: 10px; text-align: center; }
+
+#header-box  { border: 1px solid #ccc; background: #f0f0f0; }
+
+#content-box {
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+#content-box .padding  { padding: 10px 10px 0 10px; }
+
+#toolbar-box 			{ background: #fbfbfb; margin-bottom: 10px; }
+
+#submenu-box { background: #f6f6f6; margin-bottom: 10px; }
+#submenu-box .padding { padding: 0px;}
+
+
+/* -- status layout */
+#module-status      { float: right; }
+#module-status span { display: block; float: left; line-height: 16px; padding: 4px 10px 0 22px; margin-bottom: 5px; }
+
+#module-status { background: url(/media/administration/mini_icon.png) 3px 5px no-repeat; }
+.legacy-mode{ color: #c00;}
+#module-status .preview 			  { background: url(/media/administration/menu/icon-16-media.png) 3px 3px no-repeat; }
+#module-status .unread-messages,
+#module-status .no-unread-messages { background: url(/media/administration/menu/icon-16-messages.png) 3px 3px no-repeat; }
+#module-status .unread-messages a  { font-weight: bold; }
+#module-status .loggedin-users     { background: url(/media/administration/menu/icon-16-user.png) 3px 3px no-repeat; }
+#module-status .logout             { background: url(/media/administration/menu/icon-16-logout.png) 3px 3px no-repeat; }
+
+/* -- various styles -- */
+span.note {
+	display: block;
+	background: #ffd;
+	padding: 5px;
+	color: #666;
+}
+
+/** overlib **/
+
+.ol-foreground {
+	background-color: #ffe;
+}
+
+.ol-background {
+	background-color: #6db03c;
+}
+
+.ol-textfont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666;
+}
+
+.ol-captionfont {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #fff;
+	font-weight: bold;
+}
+.ol-captionfont a {
+	color: #0b5fc6;
+	text-decoration: none;
+}
+
+.ol-closefont {}
+
+/** toolbar **/
+
+div.header {
+	font-size: 22px; font-weight: bold; color: #0B55C4; line-height: 48px;
+	padding-left: 55px;
+	background-repeat: no-repeat;
+	margin-left: 10px;
+}
+
+div.header span { color: #666; }
+
+div.configuration {
+	font-size: 14px; font-weight: bold; color: #0B55C4; line-height: 16px;
+	padding-left: 30px;
+	margin-left: 10px;
+	background-image: url(/media/administration/menu/icon-16-config.png);
+	background-repeat: no-repeat;
+}
+
+div.toolbar { float: right; text-align: right; padding: 0; }
+
+table.toolbar    			 { border-collapse: collapse; padding: 0; margin: 0;	 }
+table.toolbar td 			 { padding: 1px 1px 1px 4px; text-align: center; color: #666; height: 48px; }
+table.toolbar td.spacer  { width: 10px; }
+table.toolbar td.divider { border-right: 1px solid #eee; width: 5px; }
+
+table.toolbar span { float: none; width: 32px; height: 32px; margin: 0 auto; display: block; }
+
+table.toolbar a {
+   display: block; float: left;
+	white-space: nowrap;
+	border: 1px solid #fbfbfb;
+	padding: 1px 5px;
+	cursor: pointer;
+}
+
+table.toolbar a:hover {
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	text-decoration: none;
+	color: #0B55C4;
+}
+
+/** for massmail component **/
+td#mm_pane			{ width: 90%; }
+input#mm_subject    { width: 200px; }
+textarea#mm_message { width: 100%; }
+
+/* pane-sliders  */
+.pane-sliders .title {
+	margin: 0;
+	padding: 2px;
+	color: #666;
+	cursor: pointer;
+}
+
+.pane-sliders .panel   { border: 1px solid #ccc; margin-bottom: 3px;}
+
+.pane-sliders .panel h3 { background: #f6f6f6; color: #666}
+
+.pane-sliders .content { background: #f6f6f6; }
+
+.pane-sliders .adminlist     { border: 0 none; }
+.pane-sliders .adminlist td  { border: 0 none; }
+
+.jpane-toggler  span     { background: transparent url(/media/administration/j_arrow.png) 5px 50% no-repeat; padding-left: 20px;}
+.jpane-toggler-down span { background: transparent url(/media/administration/j_arrow_down.png) 5px 50% no-repeat; padding-left: 20px;}
+
+.jpane-toggler-down {  border-bottom: 1px solid #ccc; }
+
+/* tabs */
+
+dl.tabs {
+	float: left;
+	margin: 10px 0 -1px 0;
+	z-index: 50;
+}
+
+dl.tabs dt {
+	float: left;
+	padding: 4px 10px;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	border-top: 1px solid #ccc;
+	margin-left: 3px;
+	background: #f0f0f0;
+	color: #666;
+}
+
+dl.tabs dt.open {
+	background: #F9F9F9;
+	border-bottom: 1px solid #F9F9F9;
+	z-index: 100;
+	color: #000;
+}
+
+div.current {
+	clear: both;
+	border: 1px solid #ccc;
+	padding: 10px 10px;
+}
+
+div.current dd {
+	padding: 0;
+	margin: 0;
+}
+/** cpanel settings **/
+
+#cpanel div.icon {
+	text-align: center;
+	margin-right: 5px;
+	float: left;
+	margin-bottom: 5px;
+}
+
+#cpanel div.icon a {
+	display: block;
+	float: left;
+	border: 1px solid #f0f0f0;
+	height: 97px;
+	width: 108px;
+	color: #666;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+#cpanel div.icon a:hover {
+	border-left: 1px solid #eee;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background: #f9f9f9;
+	color: #0B55C4;
+}
+
+#cpanel img  { padding: 10px 0; margin: 0 auto; }
+#cpanel span { display: block; text-align: center; }
+
+/* standard form style table */
+div.col { float: left; }
+div.width-45 { width: 45%; }
+div.width-55 { width: 55%; }
+div.width-50 { width: 50%; }
+div.width-70 { width: 70%; }
+div.width-30 { width: 30%; }
+div.width-60 { width: 60%; }
+div.width-40 { width: 40%; }
+
+table.admintable td 					 { padding: 3px; }
+table.admintable td.key,
+table.admintable td.paramlist_key {
+	background-color: #f6f6f6;
+	text-align: right;
+	width: 140px;
+	color: #666;
+	font-weight: bold;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+table.paramlist td.paramlist_description {
+	background-color: #f6f6f6;
+	text-align: left;
+	width: 170px;
+	color: #333;
+	font-weight: normal;
+	border-bottom: 1px solid #e9e9e9;
+	border-right: 1px solid #e9e9e9;
+}
+
+table.admintable td.key.vtop { vertical-align: top; }
+
+table.adminform {
+	background-color: #f9f9f9;
+	border: solid 1px #d5d5d5;
+	width: 100%;
+	border-collapse: collapse;
+	margin: 8px 0 10px 0;
+	margin-bottom: 15px;
+	width: 100%;
+}
+table.adminform.nospace { margin-bottom: 0; }
+table.adminform tr.row0 { background-color: #f9f9f9; }
+table.adminform tr.row1 { background-color: #eeeeee; }
+
+table.adminform th {
+	font-size: 11px;
+	padding: 6px 2px 4px 4px;
+	text-align: left;
+	height: 25px;
+	color: #000;
+	background-repeat: repeat;
+}
+table.adminform td { padding: 3px; text-align: left; }
+
+table.adminform td.filter{
+	text-align: left;
+}
+
+table.adminform td.helpMenu{
+	text-align: right;
+}
+
+
+fieldset.adminform { border: 1px solid #ccc; margin: 0 10px 10px 10px; }
+
+/** Table styles **/
+
+table.adminlist {
+	width: 100%;
+	border-spacing: 1px;
+	background-color: #e7e7e7;
+	color: #666;
+}
+
+table.adminlist td,
+table.adminlist th { padding: 4px; }
+
+table.adminlist thead th {
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #fff;
+}
+
+table.adminlist thead a:hover { text-decoration: none; }
+
+table.adminlist thead th img { vertical-align: middle; }
+
+table.adminlist tbody th { font-weight: bold; }
+
+table.adminlist tbody tr			{ background-color: #fff;  text-align: left; }
+table.adminlist tbody tr.row1 	{ background: #f9f9f9; border-top: 1px solid #fff; }
+
+table.adminlist tbody tr.row0:hover td,
+table.adminlist tbody tr.row1:hover td  { background-color: #ffd ; }
+
+table.adminlist tbody tr td 	   { height: 25px; background: #fff; border: 1px solid #fff; }
+table.adminlist tbody tr.row1 td { background: #f9f9f9; border-top: 1px solid #FFF; }
+
+table.adminlist tbody tr.row3 td { background: #F75037; border-top: 1px solid #FFF; color: rgb(0,0,0); }
+
+table.adminlist tbody tr.row4 td { background: #333333; border-top: 1px solid #FFF; color: rgb(255,255,255); }
+
+table.adminlist tbody tr.row5 td { background: #FFE1E1; border-top: 1px solid #FFF; color: #000000; }
+
+table.adminlist tfoot tr { text-align: center;  color: #333; }
+table.adminlist tfoot td,
+table.adminlist tfoot th { background-color: #f3f3f3; border-top: 1px solid #999; text-align: center; }
+
+table.adminlist td.order 		{ text-align: center; white-space: nowrap; }
+table.adminlist td.order span { float: left; display: block; width: 20px; text-align: center; }
+
+table.adminlist .pagination { display:table; padding:0;  margin:0 auto;	 }
+
+.pagination div.limit {
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 10px;
+}
+
+/** stu nicholls solution for centering divs **/
+.container {clear:both; text-decoration:none;}
+* html .container {display:inline-block;}
+
+/** table solution for global config **/
+table.noshow   		 { width: 100%; border-collapse: collapse; padding: 0; margin: 0; }
+table.noshow tr 		 { vertical-align: top; }
+table.noshow td 		 { }
+table.noshow fieldset { margin: 15px 7px 7px 7px; }
+
+#editor-xtd-buttons { padding: 5px; }
+
+/* -- buttons -> STILL NEED CLEANUP*/
+
+.button1,
+.button1 div{
+	height: 1%;
+	float: right;
+}
+
+.button2-left,
+.button2-right,
+.button2-left div,
+.button2-right div {
+	float: left;
+}
+
+.button1 { background: url(/media/administration/j_button1_left.png) no-repeat; white-space: nowrap; padding-left: 10px; margin-left: 5px;}
+
+.button1 .next { background: url(/media/administration/j_button1_next.png) 100% 0 no-repeat; }
+
+.button1 a {
+	display: block;
+	height: 26px;
+	float: left;
+	line-height: 26px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer;
+	padding: 0 30px 0 6px;
+}
+
+.button1 a:hover { text-decoration: none; color: #0B55C4; }
+
+.button2-left a,
+.button2-right a,
+.button2-left span,
+.button2-right span {
+	display: block;
+	height: 22px;
+	float: left;
+	line-height: 22px;
+	font-size: 11px;
+	color: #333;
+	cursor: pointer;
+}
+
+.button2-left span,
+.button2-right span { cursor: default; color: #999; }
+
+.button2-left .page a,
+.button2-right .page a,
+.button2-left .page span,
+.button2-right .page span,
+.button2-left .blank a,
+.button2-right .blank a,
+.button2-left .blank span,
+.button2-right .blank span { padding: 0 6px; }
+
+.page span,
+.blank span {
+	color: #000;
+	font-weight: bold;
+}
+
+.button2-left a:hover,
+.button2-right a:hover { text-decoration: none; color: #0B55C4; }
+
+.button2-left a,
+.button2-left span { padding: 0 24px 0 6px; }
+
+.button2-right a,
+.button2-right span { padding: 0 6px 0 24px; }
+
+.button2-left { background: url(/media/administration/j_button2_left.png) no-repeat; float: left; margin-left: 5px; }
+
+.button2-right { background: url(/media/administration/j_button2_right.png) 100% 0 no-repeat; float: left; margin-left: 5px; }
+
+.button2-right .prev { background: url(/media/administration/j_button2_prev.png) no-repeat; }
+
+.button2-right.off .prev { background: url(/media/administration/j_button2_prev_off.png) no-repeat; }
+
+.button2-right .start { background: url(/media/administration/j_button2_first.png) no-repeat; }
+
+.button2-right.off .start { background: url(/media/administration/j_button2_first_off.png) no-repeat; }
+
+.button2-left .page,
+.button2-left .blank { background: url(/media/administration/j_button2_right_cap.png) 100% 0 no-repeat; }
+
+.button2-left .next { background: url(/media/administration/j_button2_next.png) 100% 0 no-repeat; }
+
+.button2-left.off .next { background: url(/media/administration/j_button2_next_off.png) 100% 0 no-repeat; }
+
+.button2-left .end { background: url(/media/administration/j_button2_last.png) 100% 0 no-repeat; }
+
+.button2-left.off .end { background: url(/media/administration/j_button2_last_off.png) 100% 0 no-repeat; }
+
+.button2-left .image 		{ background: url(/media/administration/j_button2_image.png) 100% 0 no-repeat; }
+.button2-left .readmore 	{ background: url(/media/administration/j_button2_readmore.png) 100% 0 no-repeat; }
+.button2-left .pagebreak 	{ background: url(/media/administration/j_button2_pagebreak.png) 100% 0 no-repeat; }
+.button2-left .blank	 	{ background: url(/media/administration/j_button2_blank.png) 100% 0 no-repeat; }
+
+/* Tooltips */
+.tool-tip {
+	float: left;
+	background: #ffc;
+	border: 1px solid #D4D5AA;
+	padding: 5px;
+	max-width: 200px;
+	z-index: 50;
+}
+
+.tool-title {
+	padding: 0;
+	margin: 0;
+	font-size: 100%;
+	font-weight: bold;
+	margin-top: -15px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	background: url(/media/administration/selector-arrow.png) no-repeat;
+}
+
+.tool-text {
+	font-size: 100%;
+	margin: 0;
+}
+
+/* Calendar */
+a img.calendar {
+	width: 16px;
+	height: 16px;
+	margin-left: 3px;
+	background: url(/media/administration/calendar.png) no-repeat;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+/* System Standard Messages */
+#system-message dd.message ul { background: #C3D2E5 url(/media/administration/notice-info.png) 4px center no-repeat;}
+
+/* System Error Messages */
+#system-message dd.error ul { color: #c00; background: #E6C0C0 url(/media/administration/notice-alert.png) 4px top no-repeat; border-top: 3px solid #DE7A7B; border-bottom: 3px solid #DE7A7B;}
+
+/* System Notice Messages */
+#system-message dd.notice ul { color: #c00; background: #EFE7B8 url(/media/administration/notice-note.png) 4px top no-repeat; border-top: 3px solid #F0DC7E; border-bottom: 3px solid #F0DC7E;}
+
+
+
+
+
+
+
+
+
+
+.info_box {
+		display :none;
+		position: absolute;
+		margin-left: 500px;
+		width: 250px;
+		padding-bottom: 9px;
+
+
+
+	padding: 10px;
+	-webkit-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	
+		-moz-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	background-image: -o-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	color: #2B2C2B;
+	text-shadow: rgba(254,254,254,0.5) 0px 1px 0px;
+
+	}
+
+		.info_box p {
+	padding: 15px;
+	color: #fff;
+	-moz-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	box-shadow:inset 0px 0px 1px rgba(187,187,187,1);
+	background-image: -o-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	background-image: linear-gradient(90deg , rgb(238,238,238) 0%, rgb(254,254,254) 100%);
+	color: #2B2C2B;
+	font: 14px/21px Trebuchet MS;
+	margin: 0 !important;
+		}
+
+
+
+
+
+
+.form {
+display: inline-block;
+margin-top: 5px;
+margin-bottom: 5px;
+margin-left: 10px;
+padding-left: 20px;
+padding-bottom: 20px;
+
+}
+
+
+label {
+margin:0;padding:0;border:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;
+}
