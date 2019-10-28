@@ -34,25 +34,25 @@
 
 <table class="adminlist" cellpadding="1">
 		<thead>
-
+		
 				<th class="title">
 				Usuarios Registrados
 			</th>
 
 		</thead>
-	</table>
+	</table>       
 
 
 	<table class="adminlist" cellpadding="1">
 		<thead>
 			<tr>
-
+	
 					<th width="20%" class="title" >
 					Nombre</th>
 				<th width="20%" class="title" >
 					Usuario		</th>
 		
-
+				
 				<th width="15%" class="title">
 					Tipo				</th>
 				<th width="15%" class="title">

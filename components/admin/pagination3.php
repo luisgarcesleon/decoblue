@@ -14,7 +14,7 @@ class paginar {
 	function paginar($a) {
 	$this->codigo = $a;
 
-	$con = mysql_query(preg_replace('~ (SELECT) (.+) (FROM) ~ ','SELECT COUNT $2 FROM',$this->codigo));
+	$con = mysql_query(preg_replace('~ (SELECT) (.+?) (FROM) ~ ','SELECT COUNT $2 FROM',$this->codigo));
 	$this->total_resultados = mysql_result($con,0,0); }
 
     // Procesar Codigo SQL
@@ -30,7 +30,7 @@ class paginar {
 
         case $pag > $this->total_pag:
 		    $pag = $this->total_pag;
-}}
+}
 
     $desde = preg_match('[0-9]',$pag) ? ($pag - 1) * $this->mostrar : 0;
 	$con = mysql_query($this->codigo." LIMIT $desde,$this->mostrar");

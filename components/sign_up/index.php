@@ -95,13 +95,13 @@
     <!-- Campo 2: Usuario --><tr class="row0"><td><label for="username_reg"><strong>Nombre de Usuario</strong></label>
     <input name="username_reg" id="username_reg" maxlength="25" size="40" class="inputbox required validate-username" onfocus="showHelp(this);" onblur="hideHelp(this);" type="text">
     <div id="username_reg_text" class="info_box"><p>Solo están permitidos letras del Alfabeto Latino (A-Z), números (0-9) y carácteres como: guión (-) y guión bajo (_). Se permite como mínimo 3 carácteres y debe iniciar con una letra.</p></div></td></tr>
-
+ 
     <!-- Campo 3: Email --><tr class="row0"><td><label for="email"><strong>Email:</strong></label>
     <input name="email" id="email" class="inputbox required validate-email" size="40" maxlength="100" onfocus="showHelp(this);" onblur="hideHelp(this);" type="text">
     <div id="email_text" class="info_box"><p>Se requiere que ingrese un E-mail real. Su correo no será publicado sin su permiso o utilizado para enviarle Spam o correo basura.</p></div></td></tr>
 
     <!-- Campo 4: Contraseña --><tr class="row0"><td><label for="password_reg"><strong>Contraseña:</strong></label>
-    <input name="email" id="email" class="inputbox required validate-email" size="40" maxlength="100" onfocus="showHelp(this);" onblur="hideHelp(this);" type="text">
+    <input name="password_reg" id="password_reg" class="inputbox required validate-password" size="40" maxlength="32" onfocus="showHelp(this);" onblur="hideHelp(this);" type="password">
     <div id="password_reg_text" class="info_box"><p>Se permite un mínimo de 4 carácteres. No puede contener espacios y es sensible a las mayúsculas.<br>Ej.: AZULejo = azulejo.</p></div></td></tr>
 
     <!-- Campo 5: Verificación de Contraseña --><tr class="row0"><td><label for="confirm_password"><strong>Repite tu contraseña:</strong></label>
